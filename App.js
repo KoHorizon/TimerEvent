@@ -17,6 +17,7 @@ const dayList = [
     { id: 3, day: 6, hours: 14, min: 54 }, // Samedi 14:54
 ]
 
+// ----------------------------------------- Generate List --------------------------------------------
 const EventDateItem = ({ data }) => {
     return(
         <Text>{translateDateToFR(data.day)} à {data.hours}:{data.min}</Text>
@@ -24,7 +25,6 @@ const EventDateItem = ({ data }) => {
 }
 
 const ListEvent = () => {
-
     return(
         <SafeAreaView style={styles.eventList}>
             <Text>Les events se lance tout les :</Text>
@@ -36,6 +36,7 @@ const ListEvent = () => {
         </SafeAreaView>
     )
 }
+// -------------------------------------------------------------------------------------
 
 const getInterval = (days) => {
     const now = new Date(Date.now())
@@ -117,7 +118,7 @@ const Timer = (props) => {
             <ListEvent/>
             <Text>Prochain event dans :</Text>
             <Text style={styles.timer}>
-                {day} jour{formatWord(day)}, {hours} heure{formatWord(hours)}, {formatTime(minutes)} minute{formatWord(minutes)} et {formatTime(seconds)} seconde{formatWord(seconds)}
+            {day} jour{formatWord(day)}, {hours} heure{formatWord(hours)}, {formatTime(minutes)} minute{formatWord(minutes)} et {formatTime(seconds)} seconde{formatWord(seconds)}
             </Text>
         </>
     )
