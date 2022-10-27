@@ -53,7 +53,7 @@ const getInterval = (days) => {
 
     const dayInterval = target.day >= now.getDay()
         ? target.day - now.getDay()
-        : (6 - now.getDay() + target.day + 1) % 6
+        : (6 - now.getDay() + target.day + 1)
 
     const dateNumber = now.getDate() + dayInterval
 
